@@ -1,0 +1,12 @@
+{
+  "startups": [
+    { "id": 1, "name": "TechHub", "sector": "IA" },
+    { "id": 2, "name": "FinTechGo", "sector": "Fintech" }
+  ],
+  "events": [
+    { "id": 1, "title": "Conférence IA", "date": "2025-10-10" }
+  ],
+  "users": [
+    { "id": 1, "name": "Alice", "role": "startup" }
+  ]
+}
