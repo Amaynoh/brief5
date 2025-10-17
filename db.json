@@ -1,12 +1,35 @@
 {
-  "startups": [
-    { "id": 1, "name": "TechHub", "sector": "IA" },
-    { "id": 2, "name": "FinTechGo", "sector": "Fintech" }
-  ],
-  "events": [
-    { "id": 1, "title": "Conférence IA", "date": "2025-10-10" }
-  ],
   "users": [
-    { "id": 1, "name": "Alice", "role": "startup" }
+    {
+      "id": "1",
+      "fullName": "Admin Test",
+      "email": "admin@test.com",
+      "password": "123",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "fullName": "Startup Test",
+      "email": "startup@test.com",
+      "password": "123",
+      "role": "startup"
+    },
+    {
+      "id": "3",
+      "fullName": "Investisseur Test",
+      "email": "invest@test.com",
+      "password": "123",
+      "role": "investisseur"
+    }
+  ],
+  "startups": [
+    {
+      "id": "6311",
+      "nom": "Amina",
+      "secteur": "architecture",
+      "description": "qjfLKHKMQLSkmwmskf",
+      "logo": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fblog.artsper.com%2Ffr%2Finspirez-vous%2F10-oeuvres-la-jointure-du-beau-et-de-lutile%2F&psig=AOvVaw1SfI3bEfzhkdKziub-udQ_&ust=1760808739359000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKCtlO_hq5ADFQAAAAAdAAAAABAE",
+      "contact": "eco@deco.com"
+    }
   ]
 }

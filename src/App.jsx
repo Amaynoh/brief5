@@ -12,6 +12,7 @@ import MyEvents from "./pages/MyEvents";
 import Startups from "./pages/Startups";
 import Investisseurs from "./pages/Investisseurs";
 import PrivateRoute from "./components/PrivateRoute";
+
 export default function App() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -21,20 +22,30 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-
           <Route path="/startups" element={<Startups />} />
           <Route path="/investisseurs" element={<Investisseurs />} />
           <Route path="/evenement" element={<Evenement />} />
           <Route path="/forum" element={<Forum />} />
-          <Route path="/dashboard" element={
-            <PrivateRoute roles={["admin"]}><Dashboard /></PrivateRoute>
-          } />
-          <Route path="/myevents" element={
-            <PrivateRoute roles={["admin", "startup", "investisseur"]}><MyEvents /></PrivateRoute>
-          } />
+          <Route
+            path="/dashboard"
+            element={
+              <PrivateRoute roles={["admin"]}>
+                <Dashboard />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/myevents"
+            element={
+              <PrivateRoute roles={["admin", "startup", "investisseur"]}>
+                <MyEvents />
+              </PrivateRoute>
+            }
+          />
         </Routes>
       </main>
       <Footer />
     </div>
   );
 }
+
