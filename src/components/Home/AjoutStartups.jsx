@@ -13,7 +13,7 @@ export default function AjouterStartupModal({ isOpen, setIsOpen }) {
       if (addStartupAsync.fulfilled.match(resultAction)) {
         setIsOpen(false);
       } else {
-        alert("Erreur ajout startup: " + (resultAction.error.message || "inconnue"));
+        alert("Erreur ajout startup: " + (resultAction.error?.message || "inconnue"));
       }
     } catch (err) {
       alert("Erreur inattendue");
@@ -31,12 +31,20 @@ export default function AjouterStartupModal({ isOpen, setIsOpen }) {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
             <label className="block mb-1 font-medium">Nom de la Startup</label>
-            <input type="text" placeholder="Nom de la startup" {...register("nom", { required: "Ce champ est requis" })} className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-500" />
+            <input
+              type="text"
+              placeholder="Nom de la startup"
+              {...register("nom", { required: "Ce champ est requis" })}
+              className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+            />
             {errors.nom && <p className="text-red-500 text-sm mt-1">{errors.nom.message}</p>}
           </div>
           <div className="mb-4">
             <label className="block mb-1 font-medium">Secteur d’Activité</label>
-            <select {...register("secteur", { required: "Veuillez sélectionner un secteur" })} className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+            <select
+              {...register("secteur", { required: "Veuillez sélectionner un secteur" })}
+              className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+            >
               <option value="">Sélectionnez un secteur</option>
               <option value="architecture">Architecture</option>
               <option value="artisats">Artisats</option>
@@ -47,21 +55,41 @@ export default function AjouterStartupModal({ isOpen, setIsOpen }) {
           </div>
           <div className="mb-4">
             <label className="block mb-1 font-medium">Description Détaillée</label>
-            <textarea placeholder="Description détaillée" {...register("description", { required: "Ce champ est requis" })} className="w-full border border-gray-300 rounded-md p-2 h-32 focus:outline-none focus:ring-2 focus:ring-green-500" />
+            <textarea
+              placeholder="Description détaillée"
+              {...register("description", { required: "Ce champ est requis" })}
+              className="w-full border border-gray-300 rounded-md p-2 h-32 focus:outline-none focus:ring-2 focus:ring-green-500"
+            />
             {errors.description && <p className="text-red-500 text-sm mt-1">{errors.description.message}</p>}
           </div>
           <div className="mb-4">
             <label className="block mb-1 font-medium">Logo ou Image Représentative</label>
-            <input type="text" placeholder="Logo ou image" {...register("logo")} className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-500" />
+            <input
+              type="text"
+              placeholder="URL de l'image (ex: https://...) ou HeritageCraft.png"
+              {...register("logo")}
+              className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+            />
           </div>
           <div className="mb-6">
             <label className="block mb-1 font-medium">Coordonnées de Contact</label>
-            <input type="text" placeholder="Email ou téléphone" {...register("contact", { required: "Ce champ est requis" })} className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-500" />
+            <input
+              type="text"
+              placeholder="Email ou téléphone"
+              {...register("contact", { required: "Ce champ est requis" })}
+              className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+            />
             {errors.contact && <p className="text-red-500 text-sm mt-1">{errors.contact.message}</p>}
           </div>
-          <button type="submit" className="w-full bg-gradient-to-r from-green-600 to-orange-600 text-white font-semibold py-2 rounded-md hover:opacity-90 transition">Soumettre</button>
+          <button
+            type="submit"
+            className="w-full bg-gradient-to-r from-green-600 to-orange-600 text-white font-semibold py-2 rounded-md hover:opacity-90 transition"
+          >
+            Soumettre
+          </button>
         </form>
       </div>
     </div>
   );
 }
+
